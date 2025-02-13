@@ -10,7 +10,7 @@ This project aims to perform spam detection in networked email systems using mac
 - [Dependencies](#dependencies)
 
 ## Project Structure
-
+```
 spam_detection_project/
 │
 ├── data/
@@ -43,7 +43,7 @@ spam_detection_project/
 │
 ├── requirements.txt
 └── README.md
-
+```
 ## Setup
 
 ### Requirements
