@@ -113,11 +113,15 @@ spam_detection_project/
     python src/data_loader.py
     ```
     Creates `data/processed_data.csv`.
+
+
     ```
     # Step 2: Clean and preprocess text data
     python src/preprocessing.py
     ```
     Creates `data/processed_data_clean.csv`.
+
+
     ```
     # Step 3: Extract features using TF-IDF
     python src/feature_extraction.py
@@ -130,11 +134,15 @@ spam_detection_project/
     python src/model_training.py
     ```
     Trains Naive Bayes and SVM models and saves them in `models/`.
+
+
     ```
     # Optimize SVM model using GridSearchCV
     python src/model_optimization.py
     ```
     Optimizes the SVM model and saves the best model.
+
+    
     ```
     # Evaluate model performance
     python src/evaluation.py
