@@ -1,13 +1,34 @@
-# Spam Detection Project
+# 📧 Spam Detection Project
 
-## Project Description
-This project aims to perform spam detection in networked email systems using machine learning techniques.
+## 📝 Project Description
+This project implements a machine learning-based email spam detection system that can automatically classify incoming emails as either spam or legitimate (ham). The system uses Natural Language Processing (NLP) techniques and multiple machine learning algorithms to achieve high accuracy in spam detection.
 
-## Contents
-- [Project Structure](#project-structure)
-- [Setup](#setup)
-- [Usage](#usage)
-- [Dependencies](#dependencies)
+## 🎯 Key Features
+- Text preprocessing and cleaning
+- Feature extraction using TF-IDF vectorization
+- Multiple machine learning models (Naive Bayes and SVM)
+- Model optimization with GridSearchCV
+- Performance evaluation with confusion matrices and ROC curves
+- Easy-to-use prediction interface for new emails
+
+## 📑 Contents
+- [Project Description](#-project-description)
+- [Key Features](#-key-features)
+- [Project Structure](#-project-structure)
+- [Technical Requirements](#️-technical-requirements)
+- [Installation Guide](#️-installation-guide)
+  - [Clone the Repository](#1️⃣-clone-the-repository)
+  - [Set Up Virtual Environment](#2️⃣-set-up-virtual-environment)
+  - [Install Dependencies](#3️⃣-install-dependencies)
+  - [Download and Prepare Dataset](#4️⃣-download-and-prepare-dataset)
+- [Usage Guide](#-usage-guide)
+  - [Data Processing Pipeline](#1️⃣-data-processing-pipeline)
+  - [Model Training and Optimization](#2️⃣-model-training-and-optimization)
+  - [Making Predictions](#3️⃣-making-predictions)
+- [Performance Metrics](#-performance-metrics)
+- [Dependencies](#-dependencies)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ## Project Structure
 ```
@@ -44,33 +65,38 @@ spam_detection_project/
 ├── requirements.txt
 └── README.md
 ```
-## Setup
 
-### Requirements
-- Python 3.8 or above
-- pip
-- Virtualenv (optional)
+## 🛠️ Technical Requirements
+- Python 3.8 or higher
+- pip (Python package manager)
+- Virtual environment (recommended)
 
-### Steps
-1. **Clone the Repository**
+## ⚙️ Installation Guide
+
+### 1️⃣ Clone the Repository
     ```
     git clone https://github.com/aliasimcoskun/spam_detection_project.git
     cd spam_detection_project
     ```
 
-2. **Create and Activate a Virtual Environment**
+### 2️⃣ Set Up Virtual Environment
     ```
+    # For Windows
+    python -m venv venv
+    .\venv\Scripts\activate
+
+    # For macOS/Linux
     python3 -m venv venv
     source venv/bin/activate
     ```
 
-3. **Install Dependencies**
+### 3️⃣ Install Dependencies
     ```
     pip install --upgrade pip
     pip install -r requirements.txt
     ```
 
-4. **Download and Place the Dataset**
+### 4️⃣ Download and Prepare Dataset
     ```
     mkdir -p data/spam data/ham
     wget https://spamassassin.apache.org/old/publiccorpus/20021010_easy_ham.tar.bz2
@@ -79,63 +105,73 @@ spam_detection_project/
     tar -xjf 20021010_easy_ham.tar.bz2 -C data/ham/
     ```
 
-## Usage
+## 🚀 Usage Guide
 
-1. **Load Data:**
+### 1️⃣ Data Processing Pipeline
     ```
+    # Step 1: Load and organize email data
     python src/data_loader.py
     ```
-
     Creates `data/processed_data.csv`.
-
-2. **Preprocess Data:**
     ```
+    # Step 2: Clean and preprocess text data
     python src/preprocessing.py
     ```
-
     Creates `data/processed_data_clean.csv`.
-
-3. **Feature Extraction:**
     ```
+    # Step 3: Extract features using TF-IDF
     python src/feature_extraction.py
     ```
-
     Creates `data/features.pkl`.
 
-4. **Model Training:**
+### 2️⃣ Model Training and Optimization
     ```
+    # Train basic models (Naive Bayes and SVM)
     python src/model_training.py
     ```
-
     Trains Naive Bayes and SVM models and saves them in `models/`.
-
-5. **Model Optimization:**
     ```
+    # Optimize SVM model using GridSearchCV
     python src/model_optimization.py
     ```
-
     Optimizes the SVM model and saves the best model.
-
-6. **Model Evaluation:**
     ```
+    # Evaluate model performance
     python src/evaluation.py
     ```
-
     Visualizes confusion matrices and ROC curves.
 
-7. **Forecasting on Sample Emails:**
+### 3️⃣ Making Predictions
     ```
+    # Predict on sample emails
     python src/predict_sample.py
     ```
-
     Predicts whether sample emails in the `test_emails/` directory are spam or ham.
 
-## Dependencies
+## 📊 Performance Metrics
 
-- pandas
-- numpy
-- scikit-learn
-- nltk
-- spacy
-- matplotlib
-- seaborn
+The project generates several visualization files:
+
+- Confusion matrices for each model
+- ROC curves showing model performance
+- Detailed evaluation metrics including:
+    - Accuracy
+    - Precision
+    - Recall
+    - F1 Score
+
+## 📦 Dependencies
+Core libraries used in this project:
+
+- pandas (≥ 1.0.0) - Data manipulation
+- scikit-learn (≥ 0.24.0) - Machine learning algorithms
+- nltk (≥ 3.5) - Natural language processing
+- spacy (≥ 3.0.0) - Advanced text processing
+- matplotlib (≥ 3.3.0) - Visualization
+- seaborn (≥ 0.11.0) - Statistical visualization
+
+## 🤝 Contributing
+Contributions are welcome! Please feel free to submit pull requests.
+
+## 📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
